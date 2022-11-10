@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Peso.gd" type="Script" id=1]
+[ext_resource path="res://ARLRDBD.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://Salir.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="PantallaMorir" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_right = 1024.0
+margin_bottom = 640.0
+custom_fonts/font = SubResource( 1 )
+text = "
+
+
+                   Estas morido."
+readonly = true
+
+[node name="Salir" type="Button" parent="."]
+margin_left = 312.0
+margin_top = 464.0
+margin_right = 672.0
+margin_bottom = 576.0
+custom_fonts/font = SubResource( 3 )
+text = "Soy muy debil no puedo continuar"
+script = ExtResource( 3 )
+
+[node name="Peso" type="Button" parent="."]
+margin_left = 312.0
+margin_top = 336.0
+margin_right = 664.0
+margin_bottom = 448.0
+custom_fonts/font = SubResource( 2 )
+text = "Inserta una moneda"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="Salir" to="Salir" method="_on_Salir_pressed"]
+[connection signal="pressed" from="Peso" to="Peso" method="_on_Peso_pressed"]
